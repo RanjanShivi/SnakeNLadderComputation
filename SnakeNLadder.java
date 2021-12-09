@@ -9,13 +9,17 @@ public class SnakeNLadder {
             int option = (int) (Math.random() * 10) % 3;
             switch (option) {
                 case 1:
-                    pos += die;
-                    System.out.println("Ladder : position= " + pos);
+                    if((pos+die) > 100)
+                        System.out.println("Ladder : position= " + pos);
+                    else {
+                        pos += die;
+                        System.out.println("Ladder : position= " + pos);
+                    }
                     break;
                 case 2:
                     if((pos-die) < 0) {
                         pos = 0;
-                        System.out.println("Snake : position" + pos);
+                        System.out.println("Snake : position= " + pos);
                     }
                     else {
                         pos -= die;
